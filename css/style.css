@@ -80,16 +80,25 @@
   color: var(--c-light);
   outline: none;
   border: none;
+  cursor: pointer;
+  border: 1px solid var(--txt-c-accent);
+  transition: 0.5s ease-in-out;
+}
+
+.accent-btn:hover {
+  background: var(--c-light);
+  color: var(--txt-c-accent);
+  background: transparent;
+  outline: none;
 }
 
 .container {
-  max-width: 320px;
-  width: 100%;
+  max-width: 302px;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  margin: auto;
+  margin: 0 auto;
   padding: 30px 10px 55px 10px;
 }
 
@@ -202,6 +211,11 @@ body {
   border: 2px solid var(--txt-c-accent);
   background-color: transparent;
   margin-bottom: 35px;
+  transition: 0.5s ease-in-out;
+}
+.front-page__play-button:hover {
+  background: var(--c-light);
+  color: var(--txt-c-accent);
 }
 .front-page__play-button i {
   font-size: 9px;
@@ -396,6 +410,7 @@ body {
 .team-projects .container {
   position: relative;
   overflow-x: hidden;
+  padding-bottom: 0;
 }
 
 .team-projects-title {
@@ -432,4 +447,274 @@ body {
 
 .team-project-item:last-child {
   margin-bottom: 0;
+}
+
+/* Callback form */
+
+.callback-form__container {
+  background: var(--c-dark);
+  padding: 35px 30px 40px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.callback-form__title {
+  width: 260px;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--txt-c-light);
+  margin: 0 0 20px 0;
+}
+.callback-form__descr {
+  font-size: 17px;
+  width: 260px;
+  line-height: 150%;
+  text-align: center;
+  color: var(--txt-c-light);
+  margin: 0 0 30px 0;
+}
+.callback-form__input {
+  font-size: 17px;
+  line-height: 150%;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 10px 10px 15px 10px;
+  border-bottom: 1px solid var(--c-grey-blue);
+  text-align: center;
+  color: var(--c-grey-blue);
+  margin-bottom: 30px;
+  transition: 0.5s ease-in-out;
+}
+.callback-form__input:hover::placeholder {
+  color: var(--c-accent);
+  transition: 0.5s ease-in-out;
+}
+
+.callback-form__input:hover {
+  border-bottom: 1px solid var(--c-accent);
+  transition: 0.5s ease-in-out;
+}
+
+/* Base for label styling */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 1.95em;
+  cursor: pointer;
+}
+
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 3px var(--c-accent);
+}
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: "";
+  left: 6px;
+  top: 7px;
+  display: block;
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  background: var(--c-accent);
+  transition: all 0.2s;
+}
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+/* disabled checkbox */
+[type="checkbox"]:disabled:not(:checked) + label:before,
+[type="checkbox"]:disabled:checked + label:before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd;
+}
+[type="checkbox"]:disabled:checked + label:after {
+  color: #999;
+}
+[type="checkbox"]:disabled + label {
+  color: #aaa;
+}
+
+/* hover style just for information */
+label:hover:before {
+  border: 2px solid var(--c-accent) !important;
+}
+
+/* CALCULATOR FORM SECTION */
+
+.calculator {
+  background: var(--c-dark);
+}
+.calculator .container {
+  padding-bottom: 75px;
+}
+
+.calculator-icon {
+  width: 195px;
+}
+
+.calculator-descr {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 150%;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--txt-c-light);
+  margin: 0 0 30px 0;
+}
+
+.calculator-descr span {
+  background: var(--c-accent);
+  padding: 5px;
+}
+
+.calculator-descr .calculator-descr-accent {
+  padding: 5px 10px;
+}
+
+.calculator-title {
+  width: 270px;
+  margin-bottom: 20px;
+}
+
+.calculator-text {
+  font-size: 17px;
+  line-height: 150%;
+  text-align: center;
+  color: var(--txt-c-light);
+  margin: 20px 0 30px 0;
+}
+.calculator-form {
+  background: var(--c-light);
+  padding: 30px 25px;
+}
+.calculator-form__input {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 30px 0;
+}
+.calculator-form__title {
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 135%;
+  color: var(--text-c-dark);
+  margin-bottom: 15px;
+}
+.calculator-form__select {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--c-grey-light);
+  padding: 5px 0 17px 0;
+}
+.calculator-form__radio-container {
+  display: flex;
+  align-items: center;
+}
+.calculator-form__input-field {
+  margin-right: 10px;
+}
+.calculator-form__input-label {
+  margin-right: 15px;
+  font-size: 17px;
+  line-height: 150%;
+  color: var(--text-c-dark);
+}
+.calculator-form__total-title {
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 150%;
+  color: var(--text-c-dark);
+  margin: 0;
+}
+.calculator-form__total-price {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 150%;
+  color: var(--txt-c-dark);
+  margin: 0;
+}
+
+/* Footer */
+.footer__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer__info a {
+  transition: all 0.7s;
+}
+.footer__info a:hover {
+  color: var(--c-accent);
+}
+.footer__title {
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 150%;
+  color: var(--txt-c-dark);
+  margin: 0;
+}
+.footer__proff {
+  font-size: 17px;
+  line-height: 150%;
+  color: var(--c-dark-blue);
+  margin-bottom: 20px;
+}
+.footer__phone {
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 150%;
+  color: var(--txt-c-dark);
+  margin-bottom: 15px;
+  text-decoration: none;
+}
+.footer__email {
+  font-size: 17px;
+  line-height: 150%;
+  text-align: center;
+  color: var(--txt-c-dark);
+  margin-bottom: 30px;
+  text-decoration: none;
+}
+.footer__icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer__icons i {
+  font-size: 25px;
+  margin-left: 33px;
+  transition: all 0.7s;
+}
+.footer__icons i:first-child {
+  margin-left: 0;
+}
+.footer__icons i:hover {
+  color: var(--c-accent);
 }
