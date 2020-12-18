@@ -214,8 +214,8 @@ body {
   transition: 0.5s ease-in-out;
 }
 .front-page__play-button:hover {
-  background: var(--c-light);
-  color: var(--txt-c-accent);
+  background: var(--c-accent);
+  color: var(--c-light);
 }
 .front-page__play-button i {
   font-size: 9px;
@@ -633,6 +633,18 @@ label:hover:before {
   border-bottom: 1px solid var(--c-grey-light);
   padding: 5px 0 17px 0;
 }
+
+select:focus > option:checked {
+  background: var(--c-accent) !important;
+  color: var(--c-light);
+}
+option {
+  color: #6666;
+}
+option:hover {
+  color: red;
+}
+
 .calculator-form__radio-container {
   display: flex;
   align-items: center;
@@ -705,16 +717,19 @@ label:hover:before {
 .footer__icons {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
-.footer__icons i {
-  font-size: 25px;
+
+.footer__icons__links {
   margin-left: 33px;
-  transition: all 0.7s;
+  font-size: 25px;
+  color: var(--c-dark-blue);
+  margin-left: 33px;
+  transition: 0.9s ease-in-out;
 }
-.footer__icons i:first-child {
+.footer__icons__links:first-child {
   margin-left: 0;
 }
-.footer__icons i:hover {
+.footer__icons__links:hover {
   color: var(--c-accent);
+  transform: rotate(360deg);
 }
