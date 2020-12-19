@@ -634,15 +634,15 @@ label:hover:before {
   padding: 5px 0 17px 0;
 }
 
-select:focus > option:checked {
+.calculator-form__select:focus > option:checked {
   background: var(--c-accent) !important;
   color: var(--c-light);
 }
-option {
-  color: #6666;
+.calculator-form__select option {
+  color: var(--c-grey-blue);
 }
-option:hover {
-  color: red;
+.calculator-form__select option:hover {
+  background: var(--c-accent) !important;
 }
 
 .calculator-form__radio-container {
@@ -679,9 +679,7 @@ option:hover {
   flex-direction: column;
   align-items: center;
 }
-.footer__info a {
-  transition: all 0.7s;
-}
+
 .footer__info a:hover {
   color: var(--c-accent);
 }
@@ -724,7 +722,7 @@ option:hover {
   font-size: 25px;
   color: var(--c-dark-blue);
   margin-left: 33px;
-  transition: 0.9s ease-in-out;
+  transition: 0.8s ease-in-out;
 }
 .footer__icons__links:first-child {
   margin-left: 0;
