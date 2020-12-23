@@ -152,6 +152,7 @@ html {
   height: 70%;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   justify-content: space-between;
   margin: 0;
 }
@@ -211,6 +212,7 @@ a:focus:after {
 }
 .modal__contacts {
   text-align: center;
+  max-width: 200px;
 }
 .modal-close-btn {
   font-size: 18px;
@@ -717,6 +719,39 @@ body {
 .callback-form__input:hover {
   border-bottom: 1px solid var(--c-accent);
   transition: 0.5s ease-in-out;
+}
+.callback-form-input-error {
+  border: 2px solid red;
+  animation: pulse 2s infinite;
+}
+.callback-form-input-error:hover {
+  animation: none;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204, 55, 44, 0.4);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+  }
+}
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(204, 55, 44, 0.4);
+    box-shadow: 0 0 0 0 rgba(228, 47, 47, 0.4);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 15px rgba(204, 169, 44, 0);
+    box-shadow: 0 0 0 15px rgba(204, 169, 44, 0);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+    box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+  }
 }
 
 /* Base for label styling */
