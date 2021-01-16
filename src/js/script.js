@@ -1,3 +1,25 @@
+import AOS from 'aos';
+import '../../node_modules/choices.js/public/assets/scripts/choices.min'
+import './../css/style.css'
+import img from './../img/my-photo.jpg'
+import './../img/calculator.svg'
+import './../img/goit-logo.svg'
+import './../img/laptop.svg'
+import './../img/web-apps-laptop.png'
+import './../img/full-stack.jpg'
+import './../img/goit.jpg'
+import './../img/pro-test.jpg'
+import './../img/wedding.jpg'
+import './../img/it-test.jpg'
+import './../img/questify.jpg'
+
+
+
+AOS.init();
+
+
+
+
 const technologiesSelect = document.querySelector
     ('#calculator-form__technologies')
 const calculatorForm = document.querySelector('.calculator-form')
@@ -87,12 +109,14 @@ function extractPriceFromValue(str) {
 const mobileMenuBtn = document.querySelector('#mobile-menu-btn');
 const myVideoBtn = document.querySelector('#my-video-btn');
 const myVideoModal = document.querySelector('#my-video-modal');
-const mobileMenu = document.querySelector('#mobile-menu');
+const mobileMenu = document.querySelector('#mobile');
 const modalCloseBtns = document.querySelectorAll('.modal-close-btn');
+const modal = document.querySelector('.modal');
 const modalsWrappers = document.querySelectorAll('.modal-area-bgd');
 const modalContainers = document.querySelectorAll('.modal-area-content');
 const MODAL_ACTIVE_CLASS = 'modal-active';
 const BODY_SCROLL_DISABLE_CLASS = 'body-scroll-disable';
+
 
 enableCloseModalOnBgdClick();
 hideModalOnMobileMenuElementsClick();
@@ -176,7 +200,6 @@ projectBtns.forEach((btn, index) => {
         btn.addEventListener('click', (event) => {
             event.preventDefault();
             projectModal.classList.add(MODAL_ACTIVE_CLASS);
-
             document.body.classList.add(BODY_SCROLL_DISABLE_CLASS);
         })
     }
@@ -189,15 +212,13 @@ const requestReceivedModal = document.querySelector('#request-received');
 const userName = document.querySelector('#callback-form__input-name');
 const userEmail = document.querySelector('#callback-form__input-email');
 const userPhone = document.querySelector('#callback-form__input-phone');
+const nameError = document.querySelector('.callback-form__error-name');
+const phoneError = document.querySelector('.callback-form__error-phone');
+const emailError = document.querySelector('.callback-form__error-email');
+
 
 userPhone.addEventListener('click', function () {
     if (!userPhone.value.trim()) {
-        userPhone.value = '+380';
-    }
-});
-
-userPhone.addEventListener('blur', function () {
-    if (userPhone.value === '+380') {
         userPhone.value = '';
     }
 });
@@ -208,23 +229,29 @@ callbackForm.addEventListener('submit', function (event) {
 
     if (!userName.value.trim()) {
         userName.classList.add('callback-form-input-error');
+        nameError.style.opacity = 1
         hasError = true;
     } else {
         userName.classList.remove('callback-form-input-error');
+        nameError.style.opacity = 0
     }
 
     if (!userEmail.value.trim() || !isEmailValid(userEmail.value)) {
         userEmail.classList.add('callback-form-input-error');
+        emailError.style.opacity = 1
         hasError = true;
     } else {
         userEmail.classList.remove('callback-form-input-error');
+        emailError.style.opacity = 0
     }
 
     if (!userPhone.value.trim() || !isPhoneValid(userPhone.value)) {
         userPhone.classList.add('callback-form-input-error');
+        phoneError.style.opacity = 1
         hasError = true;
     } else {
         userPhone.classList.remove('callback-form-input-error');
+        phoneError.style.opacity = 0
     }
 
     if (hasError) {
@@ -243,8 +270,7 @@ callbackForm.addEventListener('submit', function (event) {
 });
 
 function isPhoneValid(phone = '') {
-    const regexp = /(\+38)?\(?\d{3}\)?[\s\.-]?(\d{7}|\d{3}[\s\.-]\d{2}[\s\.-]\d{2}|\d{3}-\d{4})/;
-
+    const regexp = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
     return phone.match(regexp);
 }
 
